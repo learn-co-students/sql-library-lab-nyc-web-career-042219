@@ -83,7 +83,7 @@ end
 def select_character_names_and_number_of_books_they_are_in
   <<-SQL
   SELECT
-    characters.name, COUNT(*) as book_count
+    characters.name, COUNT(*) as char_book
   FROM
     characters
   JOIN
@@ -93,6 +93,6 @@ def select_character_names_and_number_of_books_they_are_in
   GROUP BY
     characters.name
   ORDER BY
-    book_count DESC
+    char_book DESC
   SQL
 end
